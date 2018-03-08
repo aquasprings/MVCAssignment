@@ -1,0 +1,47 @@
+@model Test.Models.ALogin_
+@{
+    ViewBag.Title = "Login";
+
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Login</h2>
+
+
+@using (Html.BeginForm())
+{
+   <table>
+       <tr>
+           <td>
+               @Html.LabelFor(a=>a.username)
+           </td>
+           <td>
+               @Html.TextBoxFor(a=>a.username)
+           </td>
+           <td>
+               @Html.ValidationMessageFor(a=>a.username)
+           </td>
+       </tr>
+
+       <tr>
+           <td>
+               @Html.LabelFor(a => a.password)
+           </td>
+           <td>
+               @Html.TextBoxFor(a => a.password)
+           </td>
+           <td>
+               @Html.ValidationMessageFor(a => a.password)
+           </td>
+       </tr>
+       <tr>
+           <td>
+           </td>
+           <td>
+               <input type="submit" value="login" class="btn btn-primary " />
+           </td>
+       </tr>
+   </table>
+
+
+}
