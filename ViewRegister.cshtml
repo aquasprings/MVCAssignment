@@ -1,0 +1,34 @@
+@model IEnumerable<Test.Models.claim>
+@{
+    ViewBag.Title = "ViewRegister";
+    WebGrid grid = new WebGrid(Model);
+
+}
+
+<h2>ViewRegister</h2>
+
+@grid.GetHtml(
+    tableStyle: "table table-bordered table-hover",
+
+    columns:new[]
+    {
+        grid.Column("ClaimId"),
+        grid.Column("ClaimDescription"),
+         grid.Column("ClaimType"),
+          grid.Column("ClaimStaus"),
+           grid.Column("MobileNumber"),
+            grid.Column("Employeeid"),
+
+
+          grid.Column(format:@<text>
+        @Html.ActionLink("Update","Register",new { id=item.ClaimId })
+</text>
+              
+              
+              )
+
+    }
+
+
+
+    )
