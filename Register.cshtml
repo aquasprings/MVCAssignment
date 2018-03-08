@@ -1,0 +1,101 @@
+@model Test.Models.claim
+@{
+    ViewBag.Title = "Register";
+}
+
+@if (Convert.ToInt32(TempData["user"]) == 1)
+{
+
+    <script type="text/javascript">
+        alert('hello')
+    </script>
+
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.ClaimId)
+            </td>
+            <td>
+                @Html.DisplayFor(a => a.ClaimId)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.ClaimId)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.ClaimDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(a => a.ClaimDescription)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.ClaimDescription)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.ClaimType)
+            </td>
+            <td>
+                @Html.DisplayFor(a => a.ClaimType)
+            </td>
+           
+            <td>
+                @Html.ValidationMessageFor(a => a.ClaimType)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.ClaimStaus)
+            </td>
+            <td>
+                @Html.TextBoxFor(a => a.ClaimStaus)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.ClaimStaus)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.MobileNumber)
+            </td>
+            <td>
+                @Html.TextBoxFor(a => a.MobileNumber)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.MobileNumber)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Employeeid)
+            </td>
+            <td>
+                @Html.DisplayFor(a => a.Employeeid)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.Employeeid)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="update" class="btn btn-primary " />
+            </td>
+        </tr>
+    </table>
+
+
+}
+
+
